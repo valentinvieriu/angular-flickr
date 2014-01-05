@@ -2,9 +2,10 @@
 
 angular.module('FlickrAPI',[])
   .provider('Flickr', function FlickrProvider() {
-    var restUrl    = 'http://api.flickr.com/services/rest/?format=json';
+    var restUrl = 'http://api.flickr.com/services/rest/?format=json';
     var api_key = '';
     var user_id = '';
+    var extras  = 'url_l';
 
     this.setApiKey = function(key) {
       api_key = key || api_key;
@@ -34,7 +35,7 @@ angular.module('FlickrAPI',[])
           })
           return d.promise;
         },
-        getSet: function(photoset_id) {
+        getSet: function(photoset_id, _extras) {
           var d = $q.defer();
           $http({
             method: 'JSONP',
@@ -44,7 +45,7 @@ angular.module('FlickrAPI',[])
               'photoset_id': photoset_id,
               'jsoncallback': 'JSON_CALLBACK',
               'method':'flickr.photosets.getPhotos',
-              'extras':'url_l,url_n'
+              'extras': _extras || extras
             }
           }).success(function(data) {
             d.resolve(data);
