@@ -20,4 +20,9 @@ angular.module('angularFlickrApp', [
 
     FlickrProvider.setApiKey('bab05ea17002c5f9f458a145df6ff286');
     FlickrProvider.setUserId('66052014@N08');
+
+    
+  })
+  .run(function($rootScope) {
+    $rootScope.photosets = [];
   });

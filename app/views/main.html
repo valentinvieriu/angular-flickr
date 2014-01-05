@@ -1,34 +1,8 @@
-<div class="header">
-  <ul class="nav nav-pills pull-right">
-    <li class="active"><a ng-href="#">Home</a></li>
-    <li><a ng-href="#">About</a></li>
-    <li><a ng-href="#">Contact</a></li>
-  </ul>
-  <h3 class="text-muted">angular flickr</h3>
+<div class="col-md-3" ng-repeat="photo in photoset.photo">
+  <a href="#" class="thumbnail">
+    <img ng-src="{{photo.url_n}}" alt="{{photo.title}}">
+  </a>
 </div>
 
-<div class="row">
-  <div class="col-md-3">
-    <ul class="list-unstyled" ng-repeat="collection in collections.collection">
-      <li>
-        <h4> {{collection.title}}</h4>
-        <ul ng-repeat="set in collection.set">
-            <li>
-              <a href="#/{{set.title}}/{{set.id}}">{{set.title}}</a>
-            </li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-  <div class="col-md-9">
 
-    <div class="col-md-3" ng-repeat="photo in photoset.photo">
-      <a href="#" class="thumbnail">
-        <img ng-src="{{photo.url_n}}" alt="{{photo.title}}">
-      </a>
-    </div>
-
-  </div>
-
-</div>
 
