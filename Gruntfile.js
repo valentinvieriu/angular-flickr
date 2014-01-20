@@ -447,6 +447,7 @@ module.exports = function (grunt) {
     grunt.task.run('build');
     grunt.task.run('bumpup');
     grunt.task.run('tagrelease');
+    grunt.task.run('buildcontrol:pages');
   });
 
   grunt.registerTask('default', [
