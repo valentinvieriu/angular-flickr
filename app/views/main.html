@@ -1,6 +1,6 @@
 <div class="col-md-3" ng-repeat="photo in photoset.photo">
-  <a href="#" class="thumbnail">
-    <img ng-src="{{photo.url_n}}" alt="{{photo.title}}">
+  <a href ng-click="openImage(photo)" class="thumbnail">
+    <img ng-src="{{photo.url_q}}" alt="{{photo.title}}" title="{{photo.title}}">
   </a>
 </div>
 

@@ -2,7 +2,8 @@
 
 angular.module('angularFlickrApp', [
   'ngRoute',
-  'FlickrAPI'
+  'FlickrAPI',
+  'ui.bootstrap'
 ])
   .config(function ($routeProvider, FlickrProvider) {
     $routeProvider
@@ -18,8 +19,8 @@ angular.module('angularFlickrApp', [
         redirectTo: '/'
       });
 
-    FlickrProvider.setApiKey('bab05ea17002c5f9f458a145df6ff286');
-    FlickrProvider.setUserId('66052014@N08');
+    FlickrProvider.setApiKey('1dee747a9a6ebfdaf9e85f8315e22771');
+    FlickrProvider.setUserId('68069990@N00');
 
     
   })
